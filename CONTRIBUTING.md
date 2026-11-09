@@ -2,6 +2,8 @@
 
 Thanks for your interest in contributing!
 
+Fork and clone this repository: https://github.com/mohdadil1/College-Diaries
+
 ## How to contribute
 
 1. Fork the repository
@@ -15,13 +17,13 @@ Thanks for your interest in contributing!
 
 please be kind and respectful to everyone.
 
-## Add your own diary
+## Submit your profile
 
-1. Fork the repository and create a new branch.
-2. Create a new file for your diary, or add your entry to the diary page.
-3. Write your diary with your name, college, year, and your story.
-4. Keep it friendly, honest, and free of offensive language.
-5. Commit your changes with a short message.
-6. Push the branch to your fork.
-7. Open a pull request and describe your diary briefly.
+1. Fork and clone the repository.
+2. Open the Create Your Profile page (profile.html) in your browser.
+3. Fill in your name, course, year, introduction, skills, GitHub URL and diary story.
+4. Check the live preview, then click Copy HTML.
+5. Open index.html and paste the card inside the profiles section, after any existing card.
+6. Add your profile photo to the images folder. The file name must match the one in your card, for example images/yourname.jpeg.
+7. Commit your changes and open a pull request.
 
