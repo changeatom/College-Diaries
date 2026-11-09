@@ -248,7 +248,7 @@ function showGuide() {
     <h2>Add your own diary.</h2>
     <p>Use the profile builder to create your card, then submit it with a pull request. No JSON or JavaScript edits are needed.</p>
     <ol>
-      <li>Fork <a href="https://github.com/Devi-prasad-H/college-diaries" target="_blank" rel="noopener noreferrer">Devi-prasad-H/college-diaries</a>, then clone your fork:</li>
+      <li>Fork <a href="https://github.com/mohdadil1/College-Diaries" target="_blank" rel="noopener noreferrer">mohdadil1/college-diaries</a>, then clone your fork:</li>
     </ol>
     <pre>git clone https://github.com/YOUR_USERNAME/college-diaries.git
 cd college-diaries</pre>
@@ -257,7 +257,7 @@ cd college-diaries</pre>
       <li>Open <a href="profile-builder.html">Build a profile</a>, fill in your details, check the preview, and select <strong>Copy HTML</strong>.</li>
       <li>Add your photo at <code>images/your-name.jpg</code>. Paste the generated card inside the <code>id="grid"</code> section in <code>index.html</code> and update its image path.</li>
       <li>Run the website locally and check that your profile appears in search, matches its course filter, and opens with <strong>View diary</strong>. Include a screenshot with your pull request.</li>
-      <li>Commit and push your changes, then open a pull request to <a href="https://github.com/Devi-prasad-H/college-diaries" target="_blank" rel="noopener noreferrer">Devi-prasad-H/college-diaries</a>.</li>
+      <li>Commit and push your changes, then open a pull request to <a href="https://github.com/mohdadil1/College-Diaries" target="_blank" rel="noopener noreferrer">mohdadil1/college-diaries</a>.</li>
     </ol>
     <pre>git add index.html images/your-name.jpg
 git commit -m "Add my student profile"
