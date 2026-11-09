@@ -54,14 +54,15 @@ Open `index.html` in your browser. The C quiz and classmate game each have their
 
 ### Build a Student Profile
 
-Open **Build a profile** from the homepage, fill in the required details, and use the live preview to check your card. A GitHub profile URL is optional, but when provided it must be a valid `https://github.com/username` URL. Select **Copy HTML** to copy a card that matches the website's existing profile structure.
+Open **Build a profile** from the homepage (or visit `profile-builder.html`), fill in the required details, and use the live preview to check your card. A GitHub profile URL is optional, but when provided it must be a valid `https://github.com/username` URL. Select **Copy HTML** to generate and copy your profile card for submission.
 
-Before opening a pull request:
+To submit your profile:
 
-1. Add your profile photo to `images/` (for example, `images/your-name.jpg`).
-2. Paste the generated card inside `<div id="grid" class="grid">` in `index.html` and change the image `src` to your photo's path.
-3. Open `index.html` and check that your card appears in search, matches its course filter, and opens the diary with **View diary**.
-4. Take a screenshot of your working profile and include it in your pull request.
+1. Fork and clone the [`Devi-prasad-H/college-diaries` repository](https://github.com/Devi-prasad-H/college-diaries) as described below.
+2. Save your profile photo in `images/` (for example, `images/your-name.jpg`).
+3. Paste the generated card inside `<div id="grid" class="grid">` in `index.html` and change the image `src` to your photo's path.
+4. Open `index.html` and check that your card appears in search, matches its course filter, and opens the diary with **View diary**.
+5. Take a screenshot of your working profile and include it in your pull request.
 
 The builder escapes special characters in profile text so they remain text in the generated HTML, rather than becoming markup.
 
@@ -90,11 +91,11 @@ The quiz is available on `quiz.html` and displays questions one at a time, expla
 
 ### 1. Fork the Repository
 
-Click **Fork** to create a copy in your GitHub account.
+Fork the [College Diaries repository](https://github.com/Devi-prasad-H/college-diaries) to create a copy in your GitHub account.
 
 ### 2. Clone Your Fork
 
-Replace `YOUR_USERNAME` with your GitHub username:
+Clone your fork by replacing `YOUR_USERNAME` with your GitHub username:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/college-diaries.git
@@ -119,26 +120,7 @@ images/your-name.jpg
 
 ### 5. Add Your HTML Profile
 
-Open `index.html`. Find `<div id="grid" class="grid">` and add your card inside it. Copy this example and replace the sample details with yours:
-
-```html
-<article class="card" data-course="BCA">
-  <div class="portrait" style="--tint: #e1e8d9">
-    <img src="images/hemasri.jpg" alt="hemasri profile image">
-    <span class="course">BCA</span>
-  </div>
-  <div class="card-body">
-    <h3>hemasri s</h3>
-    <span class="year">1st year</span>
-    <p>i'm someone who loves exploring new ideas, turning curiosity into creativity, and learning by doing.</p>
-    <div class="tags"><span>HTML</span><span>CSS</span><span>c</span></div>
-    <p class="story" hidden>I enjoy exploring creative ideas,building small coding projects and making college memories while learning new things and growing in confidence.</p>
-    <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
-  </div>
-</article>
-```
-
-Use the same course name in `data-course` and the course label. Available filters are `MCA`, `BCA`, and `BSc Data Science`. Add or remove skill tags by copying or deleting `<span>` elements. Keep the `story` paragraph and change its text to what you want people to read when they open your diary. You do not need to edit `app.js`.
+Open `profile-builder.html` (or select **Build a profile** from the homepage), fill in your details, and check the live preview. Select **Copy HTML**, then paste the generated card inside `<div id="grid" class="grid">` in `index.html`. Change its image `src` to the photo you added in step 4. The builder supports the `MCA`, `BCA`, and `BSc Data Science` course filters. You do not need to edit `app.js`.
 
 ### 6. Test Your Changes
 
