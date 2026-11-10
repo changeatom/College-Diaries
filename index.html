@@ -8,6 +8,7 @@
   <meta name="description" content="A student-built collection of profiles, passions and campus stories.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dark.css">
+  <link rel="stylesheet" href="contributions.css">
 
 </head>
 
@@ -511,6 +512,58 @@
   <script src="projects.js"></script>
   <script src="app.js"></script>
   <script src="theme-toggle.js"></script>
+
+  <div class="contribution-widget">
+
+    <button
+        id="contributionBell"
+        class="contribution-bell"
+        aria-label="View contributions"
+        aria-expanded="false"
+        aria-controls="contributionPanel">
+        🔔
+
+        <span id="notificationCount"
+              class="notification-count"
+              hidden>
+            0
+        </span>
+    </button>
+
+    <div
+        id="contributionPanel"
+        class="contribution-panel"
+        hidden>
+
+        <div class="contribution-header">
+            <h3>Recent Contributions</h3>
+
+            <button
+                id="closeContributions"
+                class="close-contributions"
+                aria-label="Close">
+                &times;
+            </button>
+        </div>
+
+        <ul id="contributionList"
+            class="contribution-list">
+            <li>Loading contributions...</li>
+        </ul>
+
+        <a
+            class="contribution-footer"
+            href="https://github.com/mohdadil1/College-Diaries/pulls?q=is%3Apr+is%3Amerged"
+            target="_blank"
+            rel="noopener noreferrer">
+            View all contributions →
+        </a>
+
+      </div>
+
+</div>
+
+<script src="contributions.js"></script>
 
 </body>
 
