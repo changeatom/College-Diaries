@@ -6,6 +6,7 @@ const API_URL =
 
 const CACHE_KEY = "contributions-cache";
 const CACHE_MINUTES = 5;
+const MAX_AGE_HOURS = 24;
 
 // GitHub username -> real name. Add more as needed.
 const NAMES = {
@@ -44,7 +45,7 @@ function readCache() {
         if (cached && Date.now() - cached.time < CACHE_MINUTES * 60000) {
             return cached.data;
         }
-    } catch (e) {}
+    } catch (e) { }
     return null;
 }
 
@@ -54,7 +55,7 @@ function writeCache(data) {
             CACHE_KEY,
             JSON.stringify({ time: Date.now(), data })
         );
-    } catch (e) {}
+    } catch (e) { }
 }
 
 async function fetchContributions() {
@@ -74,6 +75,8 @@ async function fetchContributions() {
     // Only PRs actually merged into main, newest first
     const contributions = pullRequests
         .filter(pr => pr.merged_at !== null)
+        .filter(pr => Date.now() - new Date(pr.merged_at) < MAX_AGE_HOURS * 3600000)
+        .filter(pr => pr.user?.login?.toLowerCase() !== OWNER.toLowerCase())
         .sort((a, b) => new Date(b.merged_at) - new Date(a.merged_at))
         .map(pr => ({
             login: pr.user?.login ?? "Unknown",
