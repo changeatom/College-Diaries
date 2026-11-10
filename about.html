@@ -79,6 +79,18 @@
                     display: inline;
                 }
             }
+            body {
+  background-color: #ffffff;
+  color: #222222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eeeeee;
+}
+#theme-toggle {
+    color:#365b36;}
         </style>
     </head>
     <body>
@@ -88,6 +100,9 @@
             <nav aria-label="Main navigation">
                 <a href="index.html#students">The students</a>
                 <a href="index.html">Home</a>
+                <button id="theme-toggle" type="button" aria-pressed="false">
+  Dark mode
+</button>
             </nav>
         </header>
         <main id="main" class="about-page">
@@ -118,5 +133,15 @@
             <a class="brand" href="index.html">College<span>Diaries.</span></a>
             <p>Built by students. One pull request at a time.</p>
         </footer>
+        <script>
+  const themeButton = document.getElementById("theme-toggle");
+
+  themeButton.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    themeButton.textContent = isDark ? "Light mode" : "Dark mode";
+    themeButton.setAttribute("aria-pressed", String(isDark));
+  });
+</script>
     </body>
 </html>

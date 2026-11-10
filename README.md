@@ -5,10 +5,16 @@ A beginner-friendly, student-built website where students share their profiles, 
 ## Features
 
 - Student profiles with photos, introductions, skills, and personal stories
+- Share a diary with the browser's sharing menu or copy its profile link
 - Search by name, skill, or interest
 - Filter profiles by course
+- Beginner-friendly project ideas with GitHub Discussions links
+- Completed project showcases with team credits and repository or demo links
+- An interactive C programming quiz with explanations and a score summary
+- A five-round classmate guessing game with profile clues, answer feedback, and diary links
 - Responsive layout for mobile and desktop
-- Add a profile by editing HTML—no JSON or JavaScript edits needed
+- A live profile builder that generates safe, ready-to-paste student card HTML
+- Add a project idea in `projects.js`
 
 ## Technologies
 
@@ -22,8 +28,19 @@ A beginner-friendly, student-built website where students share their profiles, 
 ```text
 college-diaries/
 ├── index.html
+├── profile-builder.html
+├── profile-builder.css
+├── profile-builder.js
+├── quiz.html
 ├── style.css
 ├── app.js
+├── quiz.js
+├── projects.js
+├── quiz-questions.js
+├── classmate-game.html
+├── classmate-game.css
+├── classmate-game.js
+├── theme-toggle.js
 ├── images/
 ├── README.md
 └── LICENSE
@@ -31,17 +48,54 @@ college-diaries/
 
 ## Run Locally
 
-Open `index.html` in your browser. The site does not need a server or any extra tools.
+Open `index.html` in your browser. The C quiz and classmate game each have their own page linked from the homepage. The site does not need a server or any extra tools.
 
 ## How to Contribute
 
+### Build a Student Profile
+
+Open **Build a profile** from the homepage (or visit `profile-builder.html`), fill in the required details, and use the live preview to check your card. A GitHub profile URL is optional, but when provided it must be a valid `https://github.com/username` URL. Select **Copy HTML** to generate and copy your profile card for submission.
+
+To submit your profile:
+
+1. Fork and clone the [`Devi-prasad-H/college-diaries` repository](https://github.com/Devi-prasad-H/college-diaries) as described below.
+2. Save your profile photo in `images/` (for example, `images/your-name.jpg`).
+3. Paste the generated card inside `<div id="grid" class="grid">` in `index.html` and change the image `src` to your photo's path.
+4. Open `index.html` and check that your card appears in search, matches its course filter, and opens the diary with **View diary**.
+5. Take a screenshot of your working profile and include it in your pull request.
+
+The builder escapes special characters in profile text so they remain text in the generated HTML, rather than becoming markup.
+
+### Add a Project Idea
+
+Open `projects.js` and add an entry to the `projectIdeas` array. Include a title, a short description, your name as the creator, skills teammates can practise, one of the three supported statuses, and the repository's GitHub Discussions URL:
+
+```js
+{
+  title: 'C Quiz Game',
+  description: 'Build a small quiz together. I can use help with questions and game logic.',
+  creator: 'Your Name',
+  skills: ['C', 'Problem solving'],
+  status: 'Looking for teammates',
+  discussionUrl: 'https://github.com/Devi-prasad-H/college-diaries/discussions'
+}
+```
+
+Every idea is marked **Beginners welcome**. Use `Looking for teammates`, `Building`, or `Completed` for the status. For a completed project, also add `teamCredits` (an array of names) and `projectUrl` (a demo or repository link); the showcase will display those instead of the interest link. Replace the sample discussion URL with the idea's specific discussion thread when one is available. Submit the data-file change through a pull request.
+
+The project data is a regular JavaScript file, so it works when opening `index.html` directly in a browser.
+
+### C Programming Quiz
+
+The quiz is available on `quiz.html` and displays questions one at a time, explains each answer after submission, and shows a final score with a retry option. To contribute or update quiz questions, edit the `cQuizQuestions` array in `quiz-questions.js`. Each question has a prompt, C code, four answer options, the zero-based index of the correct option, and an explanation.
+
 ### 1. Fork the Repository
 
-Click **Fork** to create a copy in your GitHub account.
+Fork the [College Diaries repository](https://github.com/Devi-prasad-H/college-diaries) to create a copy in your GitHub account.
 
 ### 2. Clone Your Fork
 
-Replace `YOUR_USERNAME` with your GitHub username:
+Clone your fork by replacing `YOUR_USERNAME` with your GitHub username:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/college-diaries.git
@@ -66,26 +120,7 @@ images/your-name.jpg
 
 ### 5. Add Your HTML Profile
 
-Open `index.html`. Find `<div id="grid" class="grid">` and add your card inside it. Copy this example and replace the sample details with yours:
-
-```html
-<article class="card" data-course="MCA">
-  <div class="portrait" style="--tint: #e1e8d9">
-    <img src="images/your-name.jpg" alt="Your Name profile image">
-    <span class="course">MCA</span>
-  </div>
-  <div class="card-body">
-    <h3>Your Name</h3>
-    <span class="year">1st year</span>
-    <p>A short introduction about you.</p>
-    <div class="tags"><span>HTML</span><span>CSS</span><span>Art</span></div>
-    <p class="story" hidden>Write about your interests, projects or favourite college memory.</p>
-    <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
-  </div>
-</article>
-```
-
-Use the same course name in `data-course` and the course label. Available filters are `MCA`, `BCA`, and `BSc Data Science`. Add or remove skill tags by copying or deleting `<span>` elements. Keep the `story` paragraph and change its text to what you want people to read when they open your diary. You do not need to edit `app.js`.
+Open `profile-builder.html` (or select **Build a profile** from the homepage), fill in your details, and check the live preview. Select **Copy HTML**, then paste the generated card inside `<div id="grid" class="grid">` in `index.html`. Change its image `src` to the photo you added in step 4. The builder supports the `MCA`, `BCA`, and `BSc Data Science` course filters. You do not need to edit `app.js`.
 
 ### 6. Test Your Changes
 
@@ -95,6 +130,7 @@ Open `index.html` in your browser and check:
 - Your profile appears in search results.
 - The course filter works.
 - Your diary opens.
+- Sharing or copying the link opens your specific diary.
 - The layout looks good on mobile.
 
 ### 7. Commit and Push

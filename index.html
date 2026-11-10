@@ -7,16 +7,28 @@
   <title>College Diaries — Our people, our stories</title>
   <meta name="description" content="A student-built collection of profiles, passions and campus stories.">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dark.css">
+
 </head>
 
 <body>
   <header>
+   
     <img src="images/DSU logo.PNG" alt="DSU logo" height="200px" >
     <a class="brand" href="#">College<span>Diaries.</span></a>
     <nav>
       <a href="#students">The students</a>
+      <a href="#projects">Project ideas</a>
+      <a href="quiz.html" target="_blank" rel="noopener noreferrer">C quiz</a>
+      <a href="classmate-game.html">Guess a classmate</a>
+      <a href="space-fight.html">Space-Fight</a>
+      <a href="profile-builder.html">Build a profile</a>
       <button id="guide">Contribute ↗</button>
       <button onclick="location.href='about.html'">About Us</button>
+       
+      <button id="theme-toggle" type="button" aria-pressed="false">
+  Dark mode
+</button>
     </nav>
   </header>
   <main>
@@ -25,9 +37,17 @@
       <h1>Different people.<br>One <em>college diary.</em></h1>
       <p>A little about us. What we love, what we’re building,<br class="desktop"> and the stories we’ll take beyond
         campus.</p>
+        <label class="theme-switch">
       <a class="primary" href="#students">Meet the students <span>↓</span></a>
       <div class="scribble">Your story belongs here ✦</div>
       <div class="sticker">CREATE.<br>CONNECT.<br>CONTRIBUTE.</div>
+    </section>
+    <section class="quote-section" aria-label="Coding quote">
+      <div>
+        <div class="eyebrow">A LITTLE CODE WISDOM</div>
+        <p id="coding-quote" aria-live="polite">Need a boost? Get a fresh coding quote.</p>
+      </div>
+      <button id="quote-button" type="button">Get a quote ✦</button>
     </section>
     <section id="students">
       <div class="section-head">
@@ -52,6 +72,46 @@
       </div>
       <div id="grid" class="grid">
 
+        <article class="card" data-course="BSc Data Science">
+          <div class="portrait" style="--tint: #e1e8d9">
+            <img src="images/afeefa-shariff.jpg" alt="Afeefa shariff profile image">
+            <span class="course">BSc Data Science</span>
+          </div>
+          <div class="card-body">
+            <h3>Afeefa shariff</h3>
+            <span class="year">1st year</span>
+            <p>I&#39;m a B.Sc. Data Science student who is curious about technology, coding and how data can solve real-world problems. I&#39;m interested in learning new skills, exploring creativity and improving my knowledge in the IT field. I&#39;m excited to learn and grow through new experiences.</p>
+            <div class="tags">
+              <span>Python</span>
+              <span>Basic Computer Knowledge</span>
+              <span>Communication</span>
+              <span>Problem Solving</span>
+              <span>Teamwork</span>
+            </div>
+            <p class="story" hidden>My journey as a B.Sc. Data Science student is just beginning. I love exploring new things, learning about technology and discovering my interests. My goal is to improve my coding skills, gain practical knowledge and build a successful career in the IT industry. I believe every small step is part of a bigger dream. ✨</p>
+            <div class="card-bottom"><span>A story in progress</span><button class="view" type="button">View diary ↗</button></div>
+          </div>
+        </article>
+        <article class="card" data-course="BSc Data Science">
+          <div class="portrait" style="--tint: #e1e8d9">
+            <img src="images/ashwini-k.jpg" alt="Ashwini K profile image">
+            <span class="course">BSc Data Science</span>
+          </div>
+          <div class="card-body">
+            <h3>Ashwini K</h3>
+            <span class="year">1st year</span>
+            <p>Iam passionate about technology and programming and exploring the world of data</p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>PYTHON</span>
+              <span>DATA SCIENCE</span>
+            </div>
+            <p class="story" hidden>My name is ASHWINI .K I am a first-year B.Sc. Data Science student at Dayananda Sagar University. I am interested in technology and programming. I am currently learning C programming, HTML and CSS to improve my technical skills. In my free time, I enjoy COOKING and travelling. My goal is to become a Data Scientist and use technology to solve real-world problems .</p>
+            <div class="card-bottom"><span>A story in progress</span><button class="view" type="button">View diary ↗</button></div>
+          </div>
+        </article>
+       
        <article class="card" data-course="BSc Data Science">
          <div class="portrait" style="--tint: #eadfd4; height:280px;overflow:hidden;">
            <img src="images/kulavardhini-sarvadha.jpeg" alt="Kulavardhini Sarvadha DK profile image" style="display: block;
@@ -124,18 +184,14 @@
             <img src="images/khalid.jpg" alt="Meera Rao profile image" loading="lazy"
               style="border: 5px solid #0e2e6d;">
             <span class="course">BSc Data Science</span>
-            <a href="https://github.com/khalidsaifullah024"
-             target="_blank"
-             rel="noopener noreferrer">
-             GitHub Profile
-            </a>          
+                   
           </div>
           <div style="border: 3px solid black" class="card-body">
             <h3>Khalid Saifullah</h3>
             <span class="year">1st year</span>
             <p>I am passionate about technology, programming and exploring the world of data. </p>
             <div class="tags"><span>C<span>HTML</span><span>CSS</span><span>DSA</span><span>Travelling</span></div>
-            <p class="story-hidden">
+            <p class="story" hidden>
               My name is Khalid Saifullah. I am a first-year B.Sc. Data
               Science student at Dayananda Sagar University. I am interested
               in technology and programming. I am currently
@@ -144,24 +200,23 @@
               My goal is to become a Data Scientist and use technology to solve
               real-world problems.
             </p>
+             <a href="https://github.com/khalidsaifullah024">
+             GitHub Profile</a>  
             <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
-          </div>
+          </div>khalidsaifullah024
         </article>
          <article class="card" data-course="BSc Data Science">
           <div class="portrait" style="--tint: #eadfd4">
             <img src="images/DEVI PRASAD H.jpeg " alt="Meera Rao profile image" loading="lazy"
               style="border: 5px solid #0e2e6d;">
             <span class="course">BSc Data Science</span>
-            
-             
-                 
           </div>
           <div class="card-body">
             <h3 class="devi-name">DEVI PRASAD H</h3>
             <span class="year">1st year</span>
             <p>I am passionate about technology, programming and exploring the world of data. </p>
             <div class="tags"><span>C<span>HTML</span><span>CSS</span><span>DSA</span><span>Travelling</span></div>
-            <p class="story-hidden">
+            <p class="story" hidden>
               My name is DEVI PRASAD H. I am a first-year B.Sc. Data
               Science student at Dayananda Sagar University. I am interested
               in technology and programming. I am currently
@@ -174,6 +229,71 @@
             <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
           </div>
         </article>
+        <article class="card" data-course="BSc Data Science">
+          <div class="portrait" style="--tint: #eadfd4">
+            <img src="images/chinmayee..png" alt="Meera Rao profile image" loading="lazy"
+              style="border: 5px solid #0e2e6d;">
+            <span class="course">BSc Data Science</span>
+          </div>
+          <div class="card-body">
+            <h3 class="devi-name">Chinmayee.Bs</h3>
+            <span class="year">1st year</span>
+            <p>I am passionate about technology, programming and exploring the world of data. </p>
+            <div class="tags"><span>C<span>HTML</span><span>CSS</span><span>DSA</span><span>Travelling</span></div>
+            <p class="story" hidden>
+              My name is CHINMAYEE.BS. I am a first-year B.Sc. Data
+              Science student at Dayananda Sagar University. I am interested
+              in technology and programming. I am currently
+              learning C programming, HTML and CSS to improvemy technical
+              skills. In my free time, I enjoy COOKING and travelling.
+              My goal is to become a Data Scientist and use technology to solve
+              real-world problems .
+            </p>
+             <div class="github"><a href="https://github.com/chinmayeebs534-cmd">Github</a></div>
+            <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
+          </div>
+        </article>
+        <article class="card" data-course="BSc Data Science">
+          <div class="portrait" style="--tint: #eadfd4">
+            <img src="images/kirrthana.jpeg" alt="kirrthana profile image" loading="lazy"
+              style="border: 5px solid #0e2e6d;">
+            <span class="course">BSc Data Science</span>
+          </div>
+          <div class="card-body">
+            <h3 class="devi-name">Kirrthana</h3>
+            <span class="year">1st year</span>
+            <p>I am passionate about technology, programming and exploring the world of data. </p>
+            <div class="tags"><span>C<span>HTML</span><span>CSS</span><span>DSA</span><span>Travelling</span></div>
+            <p class="story" hidden>
+              My name is KIRRTHANA. I am a first-year B.Sc. Data
+              Science student at Dayananda Sagar University. I am interested
+              in technology and programming. I am currently
+              learning C programming, HTML and CSS to improvemy technical
+              skills. In my free time, I enjoy COOKING and travelling,listining to musics.
+              My goal is to become a Data Scientist and use technology to solve
+              real-world problems .
+            </p>
+             <div class="github"><a href="https://github.com/kirrthanaprkirrthu">Github</a></div>
+            <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-course="BSc Data Science">
+  <div class="portrait" style="--tint: #e1e8d9">
+    <img src="images/harshithab.jpeg" alt="harshithab profile image">
+    <span class="course">BSc Data Science</span>
+  </div>
+  <div class="card-body">
+    <h3 class="harshithab-name">Harshitha B</h3>
+    <span class="year">1st year</span>
+    <p>Building solutions to make people's life easier is something that I thrive in,exploring the tech world as I do that..</p>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>python</span><span>c</span></div>
+    <p class="story" hidden>I find sheer joy in building,collabrating and brainstroming ideas that eventually solve real world problems.. </p><br>
+    <div class="github"><a href="https://github.com/harshitha1066">Github</a></div>
+    <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div> 
+  </div>
+     </article>
+
         <article class="card" data-course="BCA">
           <div class="portrait" style="--tint: #dce5ea">
             <img src="images/vish.jpeg" alt="v" loading="lazy">
@@ -292,6 +412,22 @@
             <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
           </div>
         </article>
+
+        <article class="card" data-course="BCA">
+          <div class="portrait" style="--tint: #e1e8d9">
+          <img src="images/hemasri.jpeg" alt="hemasri profile image">
+             <span class="course">BCA</span>
+           </div>
+          <div class="card-body">
+          <h3>Hemasri S</h3>
+          <span class="year">1st year</span>
+           <p>i'm someone who loves exploring new ideas, turning curiosity into creativity, and learning by doing.</p>
+           <div class="tags"><span>HTML</span><span>CSS</span><span>c</span></div>
+          <p class="story" hidden>I enjoy exploring creative ideas,building small coding projects and making college memories while learning new things and growing in confidence.</p>
+           <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
+           </div>
+        </article>
+
         <article class="card" data-course="BCA">
           <div class="portrait" style="--tint: #efe3d8">
             <img style="border: 2px solid black;" src="images/suraj-das.jpg" alt="Suraj Das profile image"
@@ -312,7 +448,7 @@
         <article class="card" data-course="BCA">
           <div class="portrait" style="--tint : #ffd6e0">
             <img src="images/rakshi.jpeg" alt="Rakshita N profile image" loading="lazy">
-            <span class="course">BCA 2026</span>
+            <span class="course" style="color: black;">BCA 2026</span>
           </div>
           <div class="card-body" style="font-weight:bold">
             <h3>Rakshita N</h3>
@@ -324,6 +460,10 @@
             <div class="tags"><span>HTML</span><span>CSS</span><span>Canva Designing</span><span>Video Editing & Reel
                 Editing</span> <br>
             </div><br>
+            <div class="github" style="color: rgb(0, 200, 255);"><a href="https://github.com/nrakshita66-byte"> My Github</a></div>
+            </a></div>
+            <p class="story" hidden>Hey! I'm Rakshita, a BCA student exploring the world of technology. 💻✨ I'm currently learning HTML, CSS, C programming, and GitHub while discovering my interests in AI and software development. I love experimenting with new ideas, solving problems, and turning my curiosity into something creative. I'm just getting started, and I'm excited to learn, build, make mistakes, and grow one project at a time! 🚀</p>
+            <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
             <div class="github" style="background-color: aqua;"><a href="https://github.com/nrakshita66-byte"> My
                 Github</a></div>
             </a>
@@ -333,10 +473,22 @@
             I love experimenting with new ideas, solving problems, and turning my curiosity into something creative. I'm
             just getting started, and I'm excited to learn, build, make mistakes, and grow one project at a time! 🚀</p>
           <div class="card-bottom"><span>A story in progress</span><button class="view">View diary ↗</button></div>
-      </div>
+          </div>
       </article>
       </div>
       <p id="empty" hidden>No profiles found. Try a different search.</p>
+    </section>
+    <section id="projects" class="projects-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">LEARN TOGETHER, BUILD TOGETHER</div>
+          <h2>Small ideas, shared wins<span> ✦</span></h2>
+          <p>Bring a beginner-friendly idea, find a teammate, and learn as you go.</p>
+        </div>
+        <a class="project-submit" href="https://github.com/Devi-prasad-H/college-diaries/blob/main/projects.js"
+          target="_blank" rel="noopener noreferrer">Add an idea ↗</a>
+      </div>
+      <div id="project-grid" class="project-grid" aria-live="polite"></div>
     </section>
     <section class="contribute">
       <div>
@@ -355,8 +507,12 @@
   <dialog id="modal">
     <button class="close" aria-label="Close dialog">×</button>
     <div id="modal-content"></div>
+    <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
   </dialog>
+  <script src="projects.js"></script>
   <script src="app.js"></script>
+  <script src="theme-toggle.js"></script>
+
 </body>
 
 </html>
